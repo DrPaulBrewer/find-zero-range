@@ -1,0 +1,28 @@
+{
+  "name": "find-zero-range",
+  "version": "1.0.0",
+  "description": "find, approximately, by bisection, an interval [x0,x1], l<=x0<=x<=x1<=h, such that f(x)=0 for a strictly non-decreasing function f",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drpaulbrewer/node-find-zero-range.git"
+  },
+  "keywords": [
+    "zeroes",
+    "zeros",
+    "bisection"
+  ],
+  "author": "drpaulbrewer@eaftc.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drpaulbrewer/node-find-zero-range/issues"
+  },
+  "homepage": "https://github.com/drpaulbrewer/node-find-zero-range#readme",
+  "devDependencies": {
+    "mocha": "^2.4.4",
+    "should": "^8.2.1"
+  }
+}
