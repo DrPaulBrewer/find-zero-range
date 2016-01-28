@@ -42,7 +42,7 @@ Intended application: finding intervals where a step function equals zero
 
 ###tests
 
-    make tests
+    make test
 
 test framework uses mocha
 
