@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drpaulbrewer/node-find-zero-range.git"
+    "url": "git+https://github.com/drpaulbrewer/find-zero-range.git"
   },
   "keywords": [
     "zeroes",
@@ -18,9 +18,9 @@
   "author": "drpaulbrewer@eaftc.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/drpaulbrewer/node-find-zero-range/issues"
+    "url": "https://github.com/drpaulbrewer/find-zero-range/issues"
   },
-  "homepage": "https://github.com/drpaulbrewer/node-find-zero-range#readme",
+  "homepage": "https://github.com/drpaulbrewer/find-zero-range#readme",
   "devDependencies": {
     "mocha": "^2.4.4",
     "should": "^8.2.1"
