@@ -1,6 +1,6 @@
 {
   "name": "find-zero-range",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "find, approximately, by bisection, an interval [x0,x1], l<=x0<=x<=x1<=h, such that f(x)=0 for a strictly non-decreasing function f",
   "main": "index.js",
   "scripts": {
