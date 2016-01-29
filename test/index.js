@@ -35,37 +35,23 @@ describe('#findZeroRange ', function(){
 	};
 	it('should find an interval with one point', 
 	   testgen(-1000,1000,0.00001,linearF,function(t){
-	       assert.strictEqual(t.zeroRange.length, 2);
-	       assert.strictEqual(t.zeroRange[0],t.zeroRange[1]);
+	       assert.strictEqual(t.zeroRange.length, 1);
 	   }));
 	it('should find the zero to tol of 0.000001', 
 	   testgen(-1000,1000,0.000001,linearF,function(t){
 	       t.zeroRange[0].should.be.approximately(t.x0,t.tol);
-	       t.zeroRange[1].should.be.approximately(t.x0,t.tol);
 	   }));
 	it('should find an approximate zero to tol 1 and be an integer', 
 	   testgen(-1000,1000,1,linearF,function(t){
 	       assert.strictEqual(t.zeroRange[0],Math.floor(t.zeroRange[0]));
-	       assert.strictEqual(t.zeroRange[1],Math.floor(t.zeroRange[1]));
 	       t.zeroRange[0].should.be.approximately(t.x0,t.tol);
-	       t.zeroRange[1].should.be.approximately(t.x0,t.tol);
 	   }));
-
-	it('should throw when the search range is too low', function(){
-	    var toolow = function(){
-		var rng = findZeroRange(0,100,0.001,linearF(1,1000));
-	    };
-	    toolow.should.throw();
+	it('should return [] when the search range is too low', function(){
+	    findZeroRange(0,100,0.001,linearF(1,1000)).should.eql([]);
 	});
-
-	it('should throw when the search range is too high', function(){
-	    var toohigh = function(){
-		var rng = findZeroRange(10000,20000,0.001,linearF(1,1000));
-	    };
-	    toohigh.should.throw();
+	it('should return [] when the search range is too high', function(){
+	    findZeroRange(2000,3000,0.001,linearF(1,1000)).should.eql([]);
 	});
-	       
-
     });
 
 
@@ -79,15 +65,11 @@ describe('#findZeroRange ', function(){
     });
 
     describe('non-zero constant function', function(){
-	it('should throw', function(){
-	    var negconst = function(){
-		var rng = findZeroRange(0,100,0.01,function(x){ return -5; });
-	    };
-	    var posconst = function(){
-		var rng = findZeroRange(0,100,0.01,function(x){ return 42; });
-	    };
-	    negconst.should.throw();
-	    posconst.should.throw();
+	it('should return [] for negative constant function', function(){
+	    findZeroRange(0,100,0.01,function(x){ return -5;}).should.eql([]);
+	});
+	it('should return [] fpr positive constant function', function(){
+	    findZeroRange(0,100,0.01,function(x){ return 42;}).should.eql([]);
 	});
     });
     
@@ -123,7 +105,7 @@ describe('#findZeroRange ', function(){
 		});
 	    };
 	};
-	it('should find an interval with distinct endpoints', 
+	it('with tol 0.000001 should find an interval with distinct endpoints', 
 	   testgen(-1000,1000,0.00001,function(t){
 	       assert.ok(t.zeroRange.length===2);
 	       assert.ok(t.zeroRange[0]<t.zeroRange[1]);
@@ -133,12 +115,19 @@ describe('#findZeroRange ', function(){
 	       t.zeroRange[0].should.be.approximately(t.x0,t.tol);
 	       t.zeroRange[1].should.be.approximately(t.x1,t.tol);
 	   }));
-	it('should find an approximate zero to 1 tol and be an integer', 
+	it('with tol 1 should find an approximate zero or zeros as appropriate and be integer(s)', 
 	   testgen(-1000,1000,1,function(t){
-	       assert.strictEqual(t.zeroRange[0],Math.floor(t.zeroRange[0]));
-	       assert.strictEqual(t.zeroRange[1],Math.floor(t.zeroRange[1]));
-	       t.zeroRange[0].should.be.approximately(t.x0,t.tol);
-	       t.zeroRange[1].should.be.approximately(t.x1,t.tol);
+	       if (t.divisor>1){
+		   assert.strictEqual(t.zeroRange.length, 2);
+		   assert.strictEqual(t.zeroRange[0],Math.floor(t.zeroRange[0]));
+		   assert.strictEqual(t.zeroRange[1],Math.floor(t.zeroRange[1]));
+		   t.zeroRange[0].should.be.approximately(t.x0,t.tol);
+		   t.zeroRange[1].should.be.approximately(t.x1,t.tol);
+	       } else {
+		   assert.strictEqual(t.zeroRange.length,1);
+		   assert.strictEqual(t.zeroRange[0],Math.floor(t.zeroRange[0]));
+		   t.zeroRange[0].should.be.approximately(t.x0,t.tol);
+	       }
 	   }));
     });
     

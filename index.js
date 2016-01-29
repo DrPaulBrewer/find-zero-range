@@ -10,8 +10,8 @@ module.exports = function(l,h,tol,f){
     var fl = f(l), fh=f(h);
     if ((fl===0) && (fh===0)) return [l,h];
     if (fh<fl) throw "findZeroRange: requires non-descending function";
-    if (fl>=0) throw "findZeroRange: search range too high"; 
-    if (fh<=0) throw "findZeroRange: search range too low";
+    if (fl>=0) return [];
+    if (fh<=0) return [];
     var zleft,zright,mid;
     zright=left;
     while ((right-zright)>tol){
@@ -23,7 +23,7 @@ module.exports = function(l,h,tol,f){
 	    zright = mid;
     }
     if (f(zright)<0)
-	return [zright,zright];
+	return [zright];
     zleft=zright;
     while ((zleft-left)>tol){
 	mid = (left+zleft)/2;
@@ -33,6 +33,7 @@ module.exports = function(l,h,tol,f){
 	else
 	    zleft = mid;
     }
+    if (zleft===zright) return [zright];
     return [zleft, zright];
 };
 
