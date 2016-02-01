@@ -1,6 +1,6 @@
 {
   "name": "find-zero-range",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "find, approximately, by bisection, a point or interval where f(x)=0 for a strictly non-decreasing function f",
   "main": "index.js",
   "scripts": {
