@@ -9,7 +9,7 @@ module.exports = function(l,h,tol,f){
     var right=h,left=l,intflag=(tol>=1);
     var fl = f(l), fh=f(h);
     if ((fl===0) && (fh===0)) return [l,h];
-    if (fh<fl) throw "findZeroRange: requires non-descending function";
+    if (fh<fl) throw new Error("findZeroRange: requires non-descending function");
     if (fl>=0) return [];
     if (fh<=0) return [];
     var zleft,zright,mid;
