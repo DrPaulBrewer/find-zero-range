@@ -1,6 +1,8 @@
 find-zero-range
 =======
 [![Build Status](https://travis-ci.org/DrPaulBrewer/find-zero-range.svg?branch=master)](https://travis-ci.org/DrPaulBrewer/find-zero-range)
+[![Coverage Status](https://coveralls.io/repos/github/DrPaulBrewer/find-zero-range/badge.svg?branch=master)](https://coveralls.io/github/DrPaulBrewer/find-zero-range?branch=master)
+
 
 Npm Javascript package to find, approximately, via bisection, a single-element array `[x0]` or two-element array `[x0,x1]` (representing
 the inclusive range `x0<=x<=x1`) approximating f(x)~0 for a **strictly non-decreasing function f()**  An empty array `[]` is returned if there are no zeroes of f within the search
