@@ -23,9 +23,9 @@
   },
   "homepage": "https://github.com/drpaulbrewer/find-zero-range#readme",
   "devDependencies": {
-    "coveralls": "^2.11.6",
+    "coveralls": "^3.0.0",
     "istanbul": "^0.4.2",
-    "mocha": "^2.4.4",
-    "should": "^8.2.1"
+    "mocha": "^4.0.1",
+    "should": "^13.1.2"
   }
 }
