@@ -1,5 +1,4 @@
-find-zero-range
-=======
+# find-zero-range
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/DrPaulBrewer/find-zero-range.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/DrPaulBrewer/find-zero-range.svg?branch=master)](https://travis-ci.org/DrPaulBrewer/find-zero-range)
@@ -22,11 +21,11 @@ The bisection code searches for the zero crossing first and then searches for ze
 
 Intended application: finding intervals where a step function equals zero
 
-###INSTALLATION
+### INSTALLATION
 
     npm install find-zero-range --save
 
-###usage
+### usage
 
     var findZeroRange = require('find-zero-range');
     typeof(findZeroRange)
@@ -48,7 +47,7 @@ Intended application: finding intervals where a step function equals zero
     findZeroRange(200,300,1,step100Func)
     --> []
 
-###tests
+### tests
 
     make test
 
