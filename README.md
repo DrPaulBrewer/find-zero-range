@@ -1,6 +1,6 @@
 # find-zero-range
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/DrPaulBrewer/find-zero-range.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/DrPaulBrewer/find-zero-range.svg?branch=master)](https://travis-ci.org/DrPaulBrewer/find-zero-range)
 [![Coverage Status](https://coveralls.io/repos/github/DrPaulBrewer/find-zero-range/badge.svg?branch=master)](https://coveralls.io/github/DrPaulBrewer/find-zero-range?branch=master)
 
